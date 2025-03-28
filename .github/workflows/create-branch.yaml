@@ -1,0 +1,18 @@
+name: Create Feature Branch
+run-name: Create Feature Branch on issue assignment
+
+on:
+  issues:
+    types: [assigned]
+
+permissions:
+  contents: write   # Needed to create a branch
+  issues: write     # Needed to access issue details
+
+jobs:
+  create-branch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create Issue Branch
+        uses: subhamay-bhattacharyya-gha/create-branch-test@main
