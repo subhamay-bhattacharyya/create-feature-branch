@@ -7,18 +7,28 @@ run-name: Create Feature Branch by ${{ github.actor }} on ${{ github.ref_name }}
 
 on:
   workflow_dispatch:
-  
-permissions:
-  contents: write
-  issues: write
 
 jobs:
-  create-feature-branch:
-    name: "Create Feature Branch"
-    runs-on: ubuntu-latest
-    steps:
-      - name: Auto Branch from Issue
-        run: echo "Hello World !"
+  use-api:
+    # uses: ./.github/workflows/github-api-caller.yml
+    uses: subhamay-bhattacharyya-gha/create-branch-test@main
+    with:
+      api-endpoint: /repos/${{ github.repository }}
+    secrets:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+# permissions:
+#   contents: write
+#   issues: write
+
+# jobs:
+#   create-feature-branch:
+#     name: "Create Feature Branch"
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Auto Branch from Issue
+#         run: echo "Hello World !"
         
 #         uses: subhamay-bhattacharyya-gha/create-branch-test@main
 #         with:
