@@ -1,9 +1,12 @@
 name: Auto Create Branch on Issue Assignment
 
-on:
-  issues:
-    types: [assigned]
+# on:
+#   issues:
+#     types: [assigned]
 
+on:
+  workflow_dispatch:
+  
 permissions:
   contents: write
   issues: write
@@ -13,8 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Auto Branch from Issue
-        uses: subhamay-bhattacharyya-gha/create-branch-test@main
-        with:
-          base-branch: main
-        secrets:
-          git-token: ${{ secrets.GIT_TOKEN }}
+        run: echo "Hello World !"
+        
+#         uses: subhamay-bhattacharyya-gha/create-branch-test@main
+#         with:
+#           base-branch: main
+#         secrets:
+#           git-token: ${{ secrets.GIT_TOKEN }}
