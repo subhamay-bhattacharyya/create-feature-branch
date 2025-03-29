@@ -11,7 +11,7 @@ on:
 jobs:
   use-api:
     # uses: ./.github/workflows/github-api-caller.yml
-    uses: subhamay-bhattacharyya-gha/create-branch-test@main
+    uses: subhamay-bhattacharyya-gha/create-branch-test/action.yaml
     with:
       api-endpoint: /repos/${{ github.repository }}
     secrets:
