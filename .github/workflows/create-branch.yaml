@@ -13,6 +13,7 @@ permissions:
 
 jobs:
   create-feature-branch:
+    name: "Create Feature Branch"
     runs-on: ubuntu-latest
     steps:
       - name: Auto Branch from Issue
